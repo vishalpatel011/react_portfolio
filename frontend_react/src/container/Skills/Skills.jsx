@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
+import resume from '../../resources/Vishal_Resume.pdf';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -82,6 +83,7 @@ const Skills = () => {
               </motion.div>
             </motion.div>
           ))}
+          <button className='btn resume__btn'> <a className='a_color' href={resume} target={'_blank'} rel="noreferrer">Download Resume</a></button>
         </div>
       </div>
     </>

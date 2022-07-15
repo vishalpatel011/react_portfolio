@@ -4,9 +4,17 @@ export default{
     type: 'document',
     fields:[
         {
-            name:'profile',
-            title:'Profile',
-            type: 'image',           
+            name:'name',
+            title:'Name',
+            type:'string'
+        },
+        {
+            name:'profilepic',
+            title:'ProfilePic',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
         },
         
     ]

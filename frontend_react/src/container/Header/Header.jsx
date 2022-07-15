@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
 
 import { AppWrap } from '../../wrapper';
 import { images } from '../../constants';
+import { urlFor, client } from '../../client';
 import './Header.scss';
 
 
@@ -19,7 +19,20 @@ const scaleVariants = {
 };
 
 
-const Header = () => (
+const Header = () => {
+  const [profile, setProfile] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "profile"]';
+
+    client.fetch(query).then((data) => {
+      setProfile(data);
+    });
+  }, []);
+
+  return (
+    <>
+  
   <div className="app__header app__flex">
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -43,12 +56,14 @@ const Header = () => (
       </div>
     </motion.div>
 
+    {profile.map((profile) => (
     <motion.div
       whileInView={{ opacity: [0, 1] }}
       transition={{ duration: 0.5, delayChildren: 0.5 }}
       className="app__header-img"
+      key={profile.name}
     >
-      <img src={images.profile} alt="profile_bg" />
+      <img src={urlFor(profile.profilepic)} alt={profile.name} />
       <motion.img
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 1, ease: 'easeInOut' }}
@@ -57,7 +72,7 @@ const Header = () => (
         className="overlay_circle"
       />
     </motion.div>
-
+    ))}
     <motion.div
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView}
@@ -70,6 +85,8 @@ const Header = () => (
       ))}
     </motion.div>
   </div>
-);
+  </>
+  );
+};
 
 export default AppWrap(Header, 'home');
