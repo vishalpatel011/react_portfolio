@@ -83,7 +83,7 @@ const Skills = () => {
               </motion.div>
             </motion.div>
           ))}
-          <button className='btn resume__btn'> <a className='a_color' href={resume} target={'_blank'} rel="noreferrer">Download Resume</a></button>
+          <button className='btn resume__btn' href={resume} target={'_blank'} rel="noreferrer"> <a className='a_color'>Download Resume</a></button>
         </div>
       </div>
     </>
