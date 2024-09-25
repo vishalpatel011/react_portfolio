@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
-import resume from '../../resources/Vishal_Resume.pdf';
+import resume from '../../resources/VISHAL_PATEL_RESUME.pdf';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
