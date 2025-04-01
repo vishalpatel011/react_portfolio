@@ -2,6 +2,9 @@
 
 A modern, responsive portfolio website built with React.js and Sanity.io CMS. This project showcases a professional portfolio with smooth animations, responsive design, and a content management system for easy updates.
 
+## 🌐 Live Demo
+Visit the deployed application at: [Portfolio Site - Vishal Patel](https://vishalpatel.netlify.app/#home)
+
 ## 🚀 Features
 
 - Modern and responsive design
